@@ -6,4 +6,10 @@ public class Student implements Player {
     private String name;
     private Gender gender;
 
+    private Statistics statistics;
+
+
+
+
+
 }
