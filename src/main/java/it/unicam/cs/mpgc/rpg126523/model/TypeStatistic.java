@@ -6,17 +6,14 @@ package it.unicam.cs.mpgc.rpg126523.model;
  */
 public enum TypeStatistic {
     /**
-     * Resistenza
+     * VIGORE
      */
-    ENDURANCE,
+    VIGOR,
     /**
-     * Livello di Stress
+     * TEMPERAMENTO
      */
-    STRESS,
-    /**
-     * Ansia
-     */
-    ANXIETY,
+    COMPOSURE,
+
     /**
      * Ingegno
      */
