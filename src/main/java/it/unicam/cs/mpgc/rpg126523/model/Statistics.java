@@ -13,13 +13,6 @@ public class Statistics {
 
         private Map<TypeStatistic, Integer> values;
 
-        public Statistics(){
-            this.values= new HashMap<>();
-            for(TypeStatistic typeStatistic : TypeStatistic.values())
-                this.values.put(typeStatistic, 10);
-        }
-
-
         public Statistics(Map<TypeStatistic,Integer> values){
             if(values == null || values.isEmpty()) throw new IllegalArgumentException();
             this.values = new HashMap<>(values);
