@@ -8,26 +8,30 @@ import lombok.ToString;
 @ToString
 public class PlayerStudent implements Student {
 
-    //TODO: DA VALUTARE L'INSERIMENTO DI UNA MATRICOLA PER LO STUDENTE
 
+    private final int idNumber;
     private final String name;
     private final Gender gender;
     private final Statistics statistics;
 
 
-    public PlayerStudent(String name, Gender gender, Statistics statistics) {
-        if (name == null || name.isEmpty()||statistics==null) throw new IllegalArgumentException();
+    public PlayerStudent(int idNumber,String name, Gender gender, Statistics statistics) {
+        if (idNumber<=0 || name == null || name.isEmpty()||statistics==null) throw new IllegalArgumentException();
+        this.idNumber= idNumber;
         this.name = name;
         this.gender = gender;
         this.statistics = statistics;
     }
 
-
+    public int getIdentifier() {
+        return idNumber;
+    }
 
     @Override
     public Statistics getStatistics() {
         return statistics;
     }
+
 
 
 

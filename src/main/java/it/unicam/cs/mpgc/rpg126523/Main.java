@@ -11,7 +11,7 @@ public class Main {
     static void main(String[] args) {
         StatisticsFactory factory = new OverachieverFactory();
 
-        PlayerStudent s1 = new PlayerStudent("S1", Gender.FEMALE,factory.createStatistics());
+        PlayerStudent s1 = new PlayerStudent(126523, "S1", Gender.FEMALE,factory.createStatistics());
         System.out.println(s1.toString());
     }
 }
