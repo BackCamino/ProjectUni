@@ -13,9 +13,12 @@ public class PlayerStudent implements Student {
     private final String name;
     private final Gender gender;
     private final Statistics statistics;
-    //la conoscenza sara riguardante un esame in particolare, da ricordarselo e modificare in futuro
+    //la conoscenza sara' riguardante un esame in particolare, da ricordarselo e modificare in futuro
     private int knowledge;
+
     private int energy;
+
+
     private int stress;
 
 
@@ -36,6 +39,10 @@ public class PlayerStudent implements Student {
         return statistics;
     }
 
+
+    public void applyTaskResult(TaskResult result) {
+
+    }
 
 
 

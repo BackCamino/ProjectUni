@@ -6,7 +6,8 @@ import java.util.Map;
 import java.util.HashMap;
 
 /**
- * Rappresenta un gruppo di statistiche
+ * Rappresenta un gruppo di statistiche che uno studente in base alla classe scelta avra'
+ * con valori compresi tra 1-20
  */
 @ToString
 public class Statistics {
