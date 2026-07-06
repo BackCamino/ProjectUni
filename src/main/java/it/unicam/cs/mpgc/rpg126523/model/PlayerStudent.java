@@ -13,6 +13,10 @@ public class PlayerStudent implements Student {
     private final String name;
     private final Gender gender;
     private final Statistics statistics;
+    //la conoscenza sara riguardante un esame in particolare, da ricordarselo e modificare in futuro
+    private int knowledge;
+    private int energy;
+    private int stress;
 
 
     public PlayerStudent(int idNumber,String name, Gender gender, Statistics statistics) {
@@ -31,6 +35,7 @@ public class PlayerStudent implements Student {
     public Statistics getStatistics() {
         return statistics;
     }
+
 
 
 
