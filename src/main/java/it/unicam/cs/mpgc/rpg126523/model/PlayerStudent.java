@@ -1,8 +1,12 @@
 package it.unicam.cs.mpgc.rpg126523.model;
 
+import it.unicam.cs.mpgc.rpg126523.model.interfaces.Resource;
 import it.unicam.cs.mpgc.rpg126523.model.interfaces.Student;
 import lombok.Getter;
 import lombok.ToString;
+
+import java.util.List;
+import java.util.Map;
 
 @Getter
 @ToString
@@ -13,13 +17,10 @@ public class PlayerStudent implements Student {
     private final String name;
     private final Gender gender;
     private final Statistics statistics;
-    //la conoscenza sara' riguardante un esame in particolare, da ricordarselo e modificare in futuro
-    private int knowledge;
 
-    private int energy;
-
-
-    private int stress;
+    //TODO: Da verificare l'idea
+    private List<Resource> resources;
+    private Map<Course, Resource> knowledge;
 
 
     public PlayerStudent(int idNumber,String name, Gender gender, Statistics statistics) {

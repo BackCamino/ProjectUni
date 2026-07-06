@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tasks>
+    <task>
+        <nome>
+            dormire
+        </nome>
+        <descrizione>
+            Lo studente va a dormire
+        </descrizione>
+        <duration>
+            8
+        </duration>
+        <ricompense>
+            <energia type="accumolo">10</energia>
+        </ricompense>
+    </task>
+    <task>
+        <nome>
+            Lezione
+        </nome>
+        <descrizione>Andare a lezione</descrizione>
+        <duration>2</duration>
+        <ricompense>
+         <energia type="decremento"> 2</energia>
+          <conoscenza type="accumulo">2</conoscenza>
+        </ricompense>
+    </task>
+    <task>
+        <nome>Studio in biblioteca</nome>
+        <descrizione>Ripassare gli appunti in biblioteca</descrizione>
+        <duration>3</duration>
+        <ricompense>
+            <energia type="decremento">3</energia>
+            <conoscenza type="accumulo">4</conoscenza>
+        </ricompense>
+    </task>
+    <task>
+        <nome>Partita a calcetto</nome>
+        <descrizione>Uscire con gli amici a giocare a calcetto</descrizione>
+        <duration>2</duration>
+        <ricompense>
+            <energia type="decremento">3</energia>
+            <stress type="decremento">3</stress>
+        </ricompense>
+    </task>
+</tasks>
