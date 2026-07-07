@@ -12,20 +12,20 @@ import java.util.HashMap;
 @ToString
 public class Statistics {
 
-        private final Map<TypeStatistic, Integer> values;
+        private final Map<StatisticType, Integer> values;
 
-        public Statistics(Map<TypeStatistic,Integer> values){
+        public Statistics(Map<StatisticType,Integer> values){
             if(values == null || values.isEmpty()) throw new IllegalArgumentException("Statistiche senza valori");
             for(Integer value : values.values())
                 if(value<=0||value>20) throw new IllegalArgumentException("Valori delle statistiche fuori range (1-20)");
             this.values = new HashMap<>(values);
         }
 
-        public Integer getValueFromStatistic(TypeStatistic type){
+        public Integer getValueFromStatistic(StatisticType type){
             return this.values.get(type);
         }
 
-        public int getModify(TypeStatistic type){
+        public int getModify(StatisticType type){
             return (this.values.get(type)-10)/2;
         }
 

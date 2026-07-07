@@ -7,11 +7,9 @@
         <descrizione>
             Lo studente va a dormire
         </descrizione>
-        <duration>
-            8
-        </duration>
+        <duration>8</duration>
         <ricompense>
-            <energia type="accumolo">10</energia>
+            <energia type="accumulo">10</energia>
         </ricompense>
     </task>
     <task>

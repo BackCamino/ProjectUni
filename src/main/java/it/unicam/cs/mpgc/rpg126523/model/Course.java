@@ -9,11 +9,11 @@ import java.util.Objects;
 public class Course {
     private final String name;
 
-
     private final int id;
     private final String professor;
 
     private final Exam exam;
+    private CourseStatus status;
 
     public Course(String name, int id, String professor, Exam exam) {
         if(name == null || professor == null || id < 0 || professor.isEmpty() || exam == null)

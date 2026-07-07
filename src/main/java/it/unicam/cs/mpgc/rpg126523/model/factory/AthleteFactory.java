@@ -1,7 +1,7 @@
 package it.unicam.cs.mpgc.rpg126523.model.factory;
 
 import it.unicam.cs.mpgc.rpg126523.model.Statistics;
-import it.unicam.cs.mpgc.rpg126523.model.TypeStatistic;
+import it.unicam.cs.mpgc.rpg126523.model.StatisticType;
 
 import java.util.Map;
 
@@ -13,8 +13,8 @@ public class AthleteFactory extends StatisticsFactory {
     @Override
     public Statistics createStatistics() {
         return new Statistics(
-                Map.of(TypeStatistic.VIGOR, 18,
-                        TypeStatistic.INGENUITY, 12,
-                        TypeStatistic.COMPOSURE, 14));
+                Map.of(StatisticType.VIGOR, 18,
+                        StatisticType.INGENUITY, 12,
+                        StatisticType.COMPOSURE, 14));
     }
 }

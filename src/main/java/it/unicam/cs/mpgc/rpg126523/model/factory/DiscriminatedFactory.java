@@ -1,7 +1,7 @@
 package it.unicam.cs.mpgc.rpg126523.model.factory;
 
 import it.unicam.cs.mpgc.rpg126523.model.Statistics;
-import it.unicam.cs.mpgc.rpg126523.model.TypeStatistic;
+import it.unicam.cs.mpgc.rpg126523.model.StatisticType;
 
 
 import java.util.Map;
@@ -13,8 +13,8 @@ import java.util.Map;
 public class DiscriminatedFactory extends StatisticsFactory{
     @Override
     public Statistics createStatistics() {
-        return new Statistics(Map.of(TypeStatistic.COMPOSURE,10,
-                TypeStatistic.INGENUITY,10,
-                TypeStatistic.VIGOR,10));
+        return new Statistics(Map.of(StatisticType.COMPOSURE,10,
+                StatisticType.INGENUITY,10,
+                StatisticType.VIGOR,10));
     }
 }
