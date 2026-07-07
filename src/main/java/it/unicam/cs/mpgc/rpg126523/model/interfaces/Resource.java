@@ -1,21 +1,12 @@
 package it.unicam.cs.mpgc.rpg126523.model.interfaces;
 
 /**
- * Interfaccia risorsa
+ * Serve per implementare il comportamento di una risorsa
  */
-public interface Resource {
+public interface Resource extends ValueAdjustable {
 
     String getName();
 
-    int getValue();
-
-    void increment();
-
-    void increment(int delta);
-
-    void decrement();
-
-    void decrement(int delta);
 
 
 }
