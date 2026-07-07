@@ -15,14 +15,17 @@ public class Course {
     private final Exam exam;
     private CourseStatus status;
 
-    public Course(String name, int id, String professor, Exam exam) {
+    public Course(String name, int id, String professor, Exam exam, CourseStatus status) {
         if(name == null || professor == null || id < 0 || professor.isEmpty() || exam == null)
             throw new IllegalArgumentException("Uno o piu parametri non sono permessi");
         this.name = name;
         this.id = id;
         this.professor = professor;
         this.exam = exam;
+        this.status = status;
     }
+
+
 
     @Override
     public boolean equals(Object o) {

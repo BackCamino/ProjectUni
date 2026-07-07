@@ -21,7 +21,6 @@ public class PlayerStudent implements Student {
     //TODO: Da verificare l'idea
     private List<Resource> resources;
 
-
     private Map<Course, Resource> knowledge;
 
 
