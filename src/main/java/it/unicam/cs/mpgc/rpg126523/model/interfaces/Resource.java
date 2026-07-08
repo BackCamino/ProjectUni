@@ -7,6 +7,4 @@ public interface Resource extends ValueAdjustable {
 
     String getName();
 
-
-
 }

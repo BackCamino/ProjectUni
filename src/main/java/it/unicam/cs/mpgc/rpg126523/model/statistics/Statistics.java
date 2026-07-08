@@ -1,5 +1,6 @@
-package it.unicam.cs.mpgc.rpg126523.model;
+package it.unicam.cs.mpgc.rpg126523.model.statistics;
 
+import it.unicam.cs.mpgc.rpg126523.model.StatisticType;
 import lombok.ToString;
 
 import java.util.Map;

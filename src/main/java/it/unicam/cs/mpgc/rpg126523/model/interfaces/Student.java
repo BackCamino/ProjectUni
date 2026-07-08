@@ -1,7 +1,7 @@
 package it.unicam.cs.mpgc.rpg126523.model.interfaces;
 
 import it.unicam.cs.mpgc.rpg126523.model.Gender;
-import it.unicam.cs.mpgc.rpg126523.model.Statistics;
+import it.unicam.cs.mpgc.rpg126523.model.statistics.Statistics;
 
 
 

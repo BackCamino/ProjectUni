@@ -3,11 +3,11 @@ package it.unicam.cs.mpgc.rpg126523.model;
 import it.unicam.cs.mpgc.rpg126523.model.interfaces.Resource;
 import it.unicam.cs.mpgc.rpg126523.model.interfaces.Student;
 import it.unicam.cs.mpgc.rpg126523.model.interfaces.ValueAdjustable;
+import it.unicam.cs.mpgc.rpg126523.model.statistics.Statistics;
 import lombok.Getter;
 import lombok.ToString;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Getter
@@ -19,11 +19,9 @@ public class PlayerStudent implements Student {
     private final String name;
     private final Gender gender;
     private final Statistics statistics;
-
-    //TODO: Da verificare l'idea
     private final Map<String, Resource> resources;
 
-
+    //TODO: Valurare se si vuole creare una ulteriore classe per questa
     private Map<Course, ValueAdjustable> knowledge;
 
 
@@ -33,6 +31,7 @@ public class PlayerStudent implements Student {
         this.name = name;
         this.gender = gender;
         this.statistics = statistics;
+        //TODO: da migliorare qui
         resources = new HashMap<>(Map.of(
                 "Energia",new SimpleResource("Energia",0,30,30),
                 "Stress",new SimpleResource("Stress",0,20,0)

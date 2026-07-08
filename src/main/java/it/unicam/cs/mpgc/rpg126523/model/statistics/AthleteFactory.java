@@ -1,6 +1,5 @@
-package it.unicam.cs.mpgc.rpg126523.model.factory;
+package it.unicam.cs.mpgc.rpg126523.model.statistics;
 
-import it.unicam.cs.mpgc.rpg126523.model.Statistics;
 import it.unicam.cs.mpgc.rpg126523.model.StatisticType;
 
 import java.util.Map;
@@ -8,7 +7,7 @@ import java.util.Map;
 /**
  * Studente atlata con una forte resistenza fisica e una buona propensione allo stress
  */
-public class AthleteFactory extends StatisticsFactory {
+public class AthleteFactory implements StudentClass {
 
     @Override
     public Statistics createStatistics() {
@@ -16,5 +15,10 @@ public class AthleteFactory extends StatisticsFactory {
                 Map.of(StatisticType.VIGOR, 18,
                         StatisticType.INGENUITY, 12,
                         StatisticType.COMPOSURE, 14));
+    }
+
+    @Override
+    public String getName() {
+        return "Atleta";
     }
 }

@@ -2,7 +2,7 @@ package it.unicam.cs.mpgc.rpg126523.model;
 
 import it.unicam.cs.mpgc.rpg126523.model.interfaces.Resource;
 
-public class SimpleResource extends AbstractValutable implements Resource {
+public class SimpleResource extends AbstractValue implements Resource {
 
     private final String name;
 
