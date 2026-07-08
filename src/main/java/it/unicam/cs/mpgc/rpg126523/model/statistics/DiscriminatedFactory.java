@@ -1,7 +1,5 @@
 package it.unicam.cs.mpgc.rpg126523.model.statistics;
 
-import it.unicam.cs.mpgc.rpg126523.model.StatisticType;
-
 
 import java.util.Map;
 

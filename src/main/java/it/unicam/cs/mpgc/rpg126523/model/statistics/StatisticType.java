@@ -1,4 +1,4 @@
-package it.unicam.cs.mpgc.rpg126523.model;
+package it.unicam.cs.mpgc.rpg126523.model.statistics;
 
 
 /**
