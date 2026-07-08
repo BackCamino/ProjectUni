@@ -4,11 +4,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="menu" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="menu" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.mpgc.rpg126523.view.MenuController">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Menu" />
-      <Button mnemonicParsing="false" text="Nuova Partita" />
-      <Button mnemonicParsing="false" text="Carica Partita" />
-      <Button mnemonicParsing="false" text="Leggenda" />
+      <Button mnemonicParsing="false" onAction="#newGame" text="Nuova Partita" />
+      <Button mnemonicParsing="false" onAction="#loadGame" text="Carica Partita" />
+      <Button mnemonicParsing="false" onAction="#showGuide" text="Guida" />
    </children>
 </VBox>
