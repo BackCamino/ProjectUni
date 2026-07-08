@@ -6,6 +6,9 @@ import javafx.fxml.FXMLLoader;
 
 import java.io.IOException;
 
+/**
+ * Classe master che gestisce i vati scenari dell'applicazione
+ */
 public class GuiController {
 
     private final Stage stage;
@@ -13,12 +16,15 @@ public class GuiController {
         this.stage = stage;
     }
 
+    /**
+     * Il metodo di avvio della gui, carica l'avvio dell'applicazione con il menu
+     * @throws IOException
+     */
     public void startApp() throws IOException {
         this.stage.setTitle("ProjectUni");
         FXMLLoader loader= new FXMLLoader(getClass().getResource("/fxml/menu.fxml"));
         Scene root = new Scene(loader.load());
         stage.setScene(root);
         stage.show();
-
     }
 }
