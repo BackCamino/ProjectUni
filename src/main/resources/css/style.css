@@ -3,13 +3,14 @@
 }
 .root {
     -fx-font-family: "Bitcount Prop Single Ink";
+
 }
+
 .menu{
     -fx-background-color: #241B2E;
-
     -fx-spacing: 15px;
-
 }
+
 .menu Text{
     -fx-fill: #FFF2AF;
     -fx-font-size: 40px;
@@ -21,3 +22,30 @@
     -fx-pref-width: 300;
 }
 
+.form-player{
+    -fx-background-color: #241B2E;
+    -fx-padding: 10px;
+    -fx-spacing: 15px;
+}
+
+.form-player HBox{
+    -fx-spacing: 15px;
+    -fx-pref-height: 40px;
+}
+
+
+.form-player Text{
+    -fx-fill: #FFF2AF;
+    -fx-font-size: 22px;
+}
+
+.form-player .title{
+    -fx-font-size: 26px;
+}
+
+.form-player Button{
+    -fx-background-color: #493D9E;
+    -fx-text-fill: #FFF2AF;
+    -fx-font-size: 22px;
+    -fx-pref-width: 250;
+}

@@ -1,7 +1,7 @@
 package it.unicam.cs.mpgc.rpg126523;
 
 
-import it.unicam.cs.mpgc.rpg126523.controller.GuiController;
+import it.unicam.cs.mpgc.rpg126523.view.GuiController;
 import javafx.application.Application;
 
 import javafx.stage.Stage;
