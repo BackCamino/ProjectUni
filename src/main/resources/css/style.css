@@ -1,0 +1,23 @@
+@font-face {
+    src: url("../fonts/BitcountPropSingleInk-VariableFont_CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght.ttf");
+}
+.root {
+    -fx-font-family: "Bitcount Prop Single Ink";
+}
+.menu{
+    -fx-background-color: #1A2733;
+
+    -fx-spacing: 15px;
+
+}
+.menu Text{
+    -fx-fill: #FFF2AF;
+    -fx-font-size: 40px;
+}
+.menu Button{
+    -fx-background-color: #493D9E;
+    -fx-text-fill: #FFF2AF;
+    -fx-font-size: 22px;
+    -fx-pref-width: 300;
+}
+
