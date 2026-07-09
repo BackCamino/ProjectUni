@@ -19,4 +19,8 @@ public class DiscriminatedFactory implements StudentClass{
     public String getName() {
         return "Discriminato";
     }
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

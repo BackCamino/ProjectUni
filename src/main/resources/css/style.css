@@ -49,3 +49,15 @@
     -fx-font-size: 22px;
     -fx-pref-width: 250;
 }
+
+.form-player ToggleButton{
+    -fx-pref-height: 150;
+    -fx-pref-width: 150;
+    -fx-background-color: #493D9E;
+    -fx-text-fill: #FFF2AF;
+    -fx-font-size: 16px;
+}
+
+.form-player ToggleButton:selected{
+    -fx-border-color: #FFF2AF;
+}

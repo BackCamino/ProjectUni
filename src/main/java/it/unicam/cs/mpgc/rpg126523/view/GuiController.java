@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Classe master che gestisce i vati scenari dell'applicazione
  */
-public class GuiController {
+public class GuiController implements Navigator {
 
     private final Stage stage;
     public GuiController(Stage stage) {
@@ -22,27 +22,35 @@ public class GuiController {
     public void startApp() throws IOException {
         showMenu();
     }
-    public void showMenu() throws IOException{
-        this.stage.setTitle("ProjectUni");
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/fxml/menu.fxml"));
-        Scene root = new Scene(loader.load());
 
-        MenuController controller = loader.getController();
-        controller.serGuiController(this);
-        stage.setScene(root);
-        stage.show();
+
+    private void loadScene(String title, String path) {
+        this.stage.setTitle(title);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+            Scene root = new Scene(loader.load());
+            HasNavigator hasNavigator= loader.getController();
+            hasNavigator.setNavigator(this);
+            stage.setScene(root);
+            stage.show();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void showMenu() {
+        this.loadScene("Menu","/fxml/menu.fxml");
     }
 
     public void showNewPlayerCreation()  {
-        this.stage.setTitle("New Player");
-        try {
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("/fxml/create-player.fxml"));
-            Scene root = new Scene(loader.load());
-            stage.setScene(root);
-            stage.show();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+        this.loadScene("NewPlayerCreation","/fxml/create-player.fxml");
+    }
+
+
+    @Override
+    public void showGame() {
+
     }
 
 }

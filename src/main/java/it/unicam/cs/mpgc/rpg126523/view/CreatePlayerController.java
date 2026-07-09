@@ -1,20 +1,81 @@
 package it.unicam.cs.mpgc.rpg126523.view;
 
+import it.unicam.cs.mpgc.rpg126523.model.statistics.AthleteFactory;
+import it.unicam.cs.mpgc.rpg126523.model.statistics.DiscriminatedFactory;
+import it.unicam.cs.mpgc.rpg126523.model.statistics.OverachieverFactory;
+import it.unicam.cs.mpgc.rpg126523.model.statistics.StudentClass;
+import it.unicam.cs.mpgc.rpg126523.model.student.Gender;
+import it.unicam.cs.mpgc.rpg126523.model.student.PlayerStudentFactory;
+import it.unicam.cs.mpgc.rpg126523.model.student.Student;
+import it.unicam.cs.mpgc.rpg126523.model.student.StudentFactory;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import lombok.Setter;
 
-public class CreatePlayerController {
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class CreatePlayerController implements Initializable,HasNavigator {
+
+    public ToggleButton girlAvatar;
+    public ToggleButton genderlessAvatar;
+    private Navigator guiController;
+
 
     @FXML
     public TextField idNumber_txtfld;
     @FXML
     public TextField name_txtfld;
     @FXML
-    public ChoiceBox class_choicebox;
+    public ChoiceBox<StudentClass> class_choicebox;
+    @FXML
+    ToggleGroup avatars;
+
+    @FXML
+    public ToggleButton boyAvatar;
+
     @FXML
     public void createPlayer() {
-        System.out.println("Create Player");
+//        PlayerStudentFactory playerStudentFactory = new PlayerStudentFactory();
+//        Student student = playerStudentFactory.createStudent(Integer.parseInt(idNumber_txtfld.getText()),name_txtfld.getText(),(Gender) avatars.getSelectedToggle().getUserData(), class_choicebox.getValue());
+//        System.out.println(student);
+        guiController.showMenu();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        ImageView images[] = {
+                new ImageView(
+                        new Image(getClass().getResource("/images/avatars/boy/Boy_standard.png").toExternalForm())
+                ),
+                new ImageView(
+                        new Image(getClass().getResource("/images/avatars/girl/Girl.png").toExternalForm())
+                ),
+                new ImageView(
+                        new Image(getClass().getResource("/images/avatars/genderless/Genderless.png").toExternalForm()))
+
+        };
+
+        for(ImageView image: images){
+            image.setFitHeight(100);
+            image.setFitWidth(100);
+            image.setPreserveRatio(true);// serve per mantenere le proporzioni originali
+        }
+
+        boyAvatar.setGraphic(images[0]);
+        boyAvatar.setUserData(Gender.MALE);
+        girlAvatar.setGraphic(images[1]);
+        girlAvatar.setUserData(Gender.FEMALE);
+        genderlessAvatar.setGraphic(images[2]);
+        class_choicebox.getItems().addAll(new AthleteFactory(),new DiscriminatedFactory(),new OverachieverFactory());
+    }
+
+    @Override
+    public void setNavigator(Navigator navigator) {
+        this.guiController = navigator;
     }
 }

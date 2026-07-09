@@ -20,4 +20,9 @@ public class OverachieverFactory implements StudentClass {
     public String getName() {
         return "Diligente";
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

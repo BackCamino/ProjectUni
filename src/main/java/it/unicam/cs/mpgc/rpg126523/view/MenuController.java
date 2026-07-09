@@ -2,12 +2,12 @@ package it.unicam.cs.mpgc.rpg126523.view;
 
 import javafx.fxml.FXML;
 
-public class MenuController {
-    //TODO: Mettere un interfaccia Navigator per la navigazione
-    private GuiController guiController;
+public class MenuController implements HasNavigator {
+    private Navigator guiController;
 
-    public void serGuiController(GuiController guiController) {
-        this.guiController = guiController;
+    @Override
+    public void setNavigator(Navigator navigator) {
+        this.guiController = navigator;
     }
 
     @FXML
@@ -22,4 +22,5 @@ public class MenuController {
     public void showGuide(){
         System.out.println("show Guide");
     }
+
 }

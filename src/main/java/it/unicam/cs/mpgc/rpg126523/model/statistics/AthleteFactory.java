@@ -1,6 +1,10 @@
 package it.unicam.cs.mpgc.rpg126523.model.statistics;
 
+import lombok.ToString;
+
 import java.util.Map;
+
+
 
 /**
  * Studente atlata con una forte resistenza fisica e una buona propensione allo stress
@@ -19,4 +23,10 @@ public class AthleteFactory implements StudentClass {
     public String getName() {
         return "Atleta";
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
+
 }
