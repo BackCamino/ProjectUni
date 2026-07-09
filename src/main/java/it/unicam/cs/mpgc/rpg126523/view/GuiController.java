@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg126523.view;
 
+import it.unicam.cs.mpgc.rpg126523.model.student.Student;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
@@ -50,7 +51,7 @@ public class GuiController implements Navigator {
 
     @Override
     public void showGame() {
-
+        this.loadScene("ProjectUni","/fxml/game.fxml");
     }
 
 }

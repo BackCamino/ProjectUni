@@ -61,3 +61,63 @@
 .form-player ToggleButton:selected{
     -fx-border-color: #FFF2AF;
 }
+
+.game{
+    -fx-background-color: #241B2E;
+
+}
+
+.game .player-info{
+    -fx-background-color: #141B24;
+    -fx-padding: 5px;
+
+}
+
+.game Text{
+    -fx-fill: #FFF2AF;
+    -fx-font-size: 16px;
+}
+
+.game Label{
+    -fx-text-fill: #2E8B7A;
+    -fx-font-size: 16px;
+}
+
+.player-info Hbox{
+    -fx-pref-height: 35;
+    -fx-spacing: 10px;
+}
+
+
+.button-pausa, .button-avvia {
+    -fx-text-fill: #FFF2AF;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 14px 40px;
+    -fx-cursor: hand;
+}
+
+.button-pausa {
+    -fx-background-color: #A94442;
+}
+
+.button-pausa:hover {
+    -fx-background-color: #C0524F;
+}
+
+.button-pausa:pressed {
+    -fx-background-color: #8F3936;
+}
+
+.button-avvia {
+    -fx-background-color: #4C9A6B;
+}
+
+.button-avvia:hover {
+    -fx-background-color: #5CAE7C;
+}
+
+.button-avvia:pressed {
+    -fx-background-color: #3E8058;
+}

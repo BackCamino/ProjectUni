@@ -8,5 +8,5 @@ public interface Navigator {
 
     public void showNewPlayerCreation();
 
-    public void showGame(Student player);
+    public void showGame();
 }

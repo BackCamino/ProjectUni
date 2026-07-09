@@ -43,7 +43,7 @@ public class CreatePlayerController implements Initializable,HasNavigator {
 //        PlayerStudentFactory playerStudentFactory = new PlayerStudentFactory();
 //        Student student = playerStudentFactory.createStudent(Integer.parseInt(idNumber_txtfld.getText()),name_txtfld.getText(),(Gender) avatars.getSelectedToggle().getUserData(), class_choicebox.getValue());
 //        System.out.println(student);
-        guiController.showMenu();
+        guiController.showGame();
     }
 
     @Override
