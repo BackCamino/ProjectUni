@@ -1,14 +1,14 @@
 # Project UNI
+Progetto per esame universitario, corso: metodologie di programmazzione, anno accademico: 2025/2026 Unicam.
 
 ## 🤔​​ Che cosa è
-Project Uni o almeno questo il primo nome in fase embrionale del progetto, è l'apha di un rpg ambientanto in un università generica dove il giocatore in questo caso lo studente dovrà dovrà affontare diverse sfide:
+ProjectUni è un alha di un rpg task manager ambientato in un università generica. Si potrà interpretare uno studente che affronterà diverse sfide/task:
 * Studio;
 * Andare a lezione,
-* Gli aperitivi;
 * Dare gli esame.
-* Ecc;
-
-Tutto ciò per guadagnare i cfu e potersi laureare.
+* Praticare sport
+* E altro ancora.
+  
 ## 🕹️​ Cosa si puo fare
 Una volta creato il personaggio, si pianifica la vita di uno studente, la meccanica viene spiegata meglio nella [wiki](Wiki/Home.md)
 
