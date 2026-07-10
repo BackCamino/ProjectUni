@@ -1,19 +1,18 @@
 package it.unicam.cs.mpgc.rpg126523.model.student;
 
-import it.unicam.cs.mpgc.rpg126523.model.Course;
-import it.unicam.cs.mpgc.rpg126523.model.SimpleResource;
-import it.unicam.cs.mpgc.rpg126523.model.TaskResult;
-import it.unicam.cs.mpgc.rpg126523.model.interfaces.Resource;
-import it.unicam.cs.mpgc.rpg126523.model.interfaces.ValueAdjustable;
+import it.unicam.cs.mpgc.rpg126523.model.career.Career;
+import it.unicam.cs.mpgc.rpg126523.model.career.Course;
+import it.unicam.cs.mpgc.rpg126523.model.resource.SimpleResource;
+import it.unicam.cs.mpgc.rpg126523.model.task.TaskResult;
+import it.unicam.cs.mpgc.rpg126523.model.resource.Resource;
+import it.unicam.cs.mpgc.rpg126523.model.resource.ValueAdjustable;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.Statistics;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.StudentClass;
-import lombok.Getter;
 import lombok.ToString;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@Getter
 @ToString
 public class PlayerStudent implements Student {
 
@@ -25,7 +24,7 @@ public class PlayerStudent implements Student {
     private final Statistics statistics;
     private final Map<String, Resource> resources;
 
-    //TODO: Valurare se si vuole creare una ulteriore classe per questa
+    private Career career;
     private Map<Course, ValueAdjustable> knowledge;
 
 
@@ -36,6 +35,7 @@ public class PlayerStudent implements Student {
         this.gender = gender;
         this.studentClass = studentClass;
         this.statistics = studentClass.createStatistics();
+
         //TODO: da migliorare qui
         resources = new HashMap<>(Map.of(
                 "Energia",new SimpleResource("Energia",0,30,30),
@@ -54,13 +54,28 @@ public class PlayerStudent implements Student {
     }
 
 
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
     public String getIdentifier() {
         return idNumber;
     }
 
     @Override
+    public Gender getGender() {
+        return this.gender;
+    }
+
+    @Override
     public Statistics getStatistics() {
         return statistics;
+    }
+
+    @Override
+    public Career getCareer() {
+        return this.career;
     }
 
 

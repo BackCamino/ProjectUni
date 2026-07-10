@@ -1,6 +1,4 @@
-package it.unicam.cs.mpgc.rpg126523.model;
-
-import it.unicam.cs.mpgc.rpg126523.model.interfaces.Resource;
+package it.unicam.cs.mpgc.rpg126523.model.resource;
 
 public class SimpleResource extends AbstractValue implements Resource {
 

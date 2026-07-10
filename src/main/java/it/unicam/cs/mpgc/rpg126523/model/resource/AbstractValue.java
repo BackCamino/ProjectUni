@@ -1,6 +1,4 @@
-package it.unicam.cs.mpgc.rpg126523.model;
-
-import it.unicam.cs.mpgc.rpg126523.model.interfaces.ValueAdjustable;
+package it.unicam.cs.mpgc.rpg126523.model.resource;
 
 public abstract class AbstractValue implements ValueAdjustable {
     private final int minValue;

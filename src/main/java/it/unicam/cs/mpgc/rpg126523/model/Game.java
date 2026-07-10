@@ -18,9 +18,4 @@ public class Game {
         this.currentDay = 1;
     }
 
-
-
-
-
-
 }

@@ -1,4 +1,4 @@
-package it.unicam.cs.mpgc.rpg126523.model.interfaces;
+package it.unicam.cs.mpgc.rpg126523.model.resource;
 
 /**
  * Serve per implementare il comportamento di una risorsa

@@ -1,6 +1,4 @@
-package it.unicam.cs.mpgc.rpg126523.model;
-
-import it.unicam.cs.mpgc.rpg126523.model.interfaces.Task;
+package it.unicam.cs.mpgc.rpg126523.model.task;
 
 public class TaskDefault implements Task {
 

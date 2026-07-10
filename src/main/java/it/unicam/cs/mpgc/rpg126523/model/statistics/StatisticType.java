@@ -1,8 +1,7 @@
 package it.unicam.cs.mpgc.rpg126523.model.statistics;
 
-
 /**
- * Tipi di statistica che normalmente un giocatore ha
+ * Tipi di statistica che normalmente un giocatore possiede
  */
 public enum StatisticType {
     /**
@@ -13,10 +12,8 @@ public enum StatisticType {
      * TEMPERAMENTO
      */
     COMPOSURE,
-
     /**
      * Ingegno
      */
     INGENUITY,
-
 }
