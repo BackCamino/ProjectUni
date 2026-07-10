@@ -68,9 +68,10 @@
 }
 
 .game .player-info{
-    -fx-background-color: #141B24;
+    -fx-spacing: 10px;
     -fx-padding: 5px;
-
+    -fx-border-color: transparent #4A3D5C transparent transparent;
+    -fx-border-width: 0 1px 0 0;
 }
 
 .game Text{
@@ -86,6 +87,12 @@
 .player-info Hbox{
     -fx-pref-height: 35;
     -fx-spacing: 10px;
+}
+
+.separator .line {
+    -fx-border-color: #4A3D5C;
+    -fx-border-width: 1px 0 0 0;
+    -fx-opacity: 0.6;
 }
 
 

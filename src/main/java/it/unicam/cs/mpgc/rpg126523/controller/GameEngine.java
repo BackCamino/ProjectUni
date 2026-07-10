@@ -32,6 +32,8 @@ public class GameEngine {
         this.game= new Game(playerStudentFactory.createStudent(idNumber, name, gender, studentclass));
     }
 
-
+    public Student showPlayer(){
+        return game.getPlayerStudent();
+    }
 
 }
