@@ -8,7 +8,7 @@ public interface Student {
 
     public String getName();
 
-    public int getIdentifier();
+    public String getIdentifier();
 
     public Gender getGender();
 

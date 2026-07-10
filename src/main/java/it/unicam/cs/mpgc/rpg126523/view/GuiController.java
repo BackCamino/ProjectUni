@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg126523.view;
 
+import it.unicam.cs.mpgc.rpg126523.controller.GameEngine;
 import it.unicam.cs.mpgc.rpg126523.model.student.Student;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -13,8 +14,10 @@ import java.io.IOException;
 public class GuiController implements Navigator {
 
     private final Stage stage;
-    public GuiController(Stage stage) {
+    private final GameEngine gameEngine;
+    public GuiController(Stage stage,GameEngine gameEngine) {
         this.stage = stage;
+        this.gameEngine = gameEngine;
     }
     /**
      * Il metodo di avvio della gui, carica l'avvio dell'applicazione con il menu
@@ -52,6 +55,11 @@ public class GuiController implements Navigator {
     @Override
     public void showGame() {
         this.loadScene("ProjectUni","/fxml/game.fxml");
+    }
+
+    @Override
+    public GameEngine getGameEngine() {
+        return this.gameEngine;
     }
 
 }

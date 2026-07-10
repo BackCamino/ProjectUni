@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg126523.view;
 
+import it.unicam.cs.mpgc.rpg126523.controller.GameEngine;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.AthleteFactory;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.DiscriminatedFactory;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.OverachieverFactory;
@@ -40,9 +41,9 @@ public class CreatePlayerController implements Initializable,HasNavigator {
 
     @FXML
     public void createPlayer() {
-//        PlayerStudentFactory playerStudentFactory = new PlayerStudentFactory();
-//        Student student = playerStudentFactory.createStudent(Integer.parseInt(idNumber_txtfld.getText()),name_txtfld.getText(),(Gender) avatars.getSelectedToggle().getUserData(), class_choicebox.getValue());
-//        System.out.println(student);
+        Gender gender=(Gender) avatars.getSelectedToggle().getUserData();
+        guiController.getGameEngine().createPlayer(idNumber_txtfld.getText(),name_txtfld.getText(),gender, class_choicebox.getValue());
+
         guiController.showGame();
     }
 

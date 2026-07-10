@@ -18,7 +18,7 @@ import java.util.Map;
 public class PlayerStudent implements Student {
 
 
-    private final int idNumber;
+    private final String idNumber;
     private final String name;
     private final Gender gender;
     private final StudentClass studentClass;
@@ -29,8 +29,8 @@ public class PlayerStudent implements Student {
     private Map<Course, ValueAdjustable> knowledge;
 
 
-    public PlayerStudent(int idNumber,String name, Gender gender, StudentClass studentClass) {
-        if (idNumber<=0 || name == null || name.isEmpty()||studentClass==null) throw new IllegalArgumentException();
+    public PlayerStudent(String idNumber,String name, Gender gender, StudentClass studentClass) {
+        if (idNumber==null||idNumber.length()!=6 || name == null || name.isEmpty()||studentClass==null) throw new IllegalArgumentException();
         this.idNumber= idNumber;
         this.name = name;
         this.gender = gender;
@@ -44,7 +44,7 @@ public class PlayerStudent implements Student {
 
     }
 
-    public PlayerStudent(int idNumber, String name, Gender gender, StudentClass studentClass, Statistics statistics, Map<String, Resource> resources) {
+    public PlayerStudent(String idNumber, String name, Gender gender, StudentClass studentClass, Statistics statistics, Map<String, Resource> resources) {
         this.idNumber = idNumber;
         this.name = name;
         this.gender = gender;
@@ -54,7 +54,7 @@ public class PlayerStudent implements Student {
     }
 
 
-    public int getIdentifier() {
+    public String getIdentifier() {
         return idNumber;
     }
 

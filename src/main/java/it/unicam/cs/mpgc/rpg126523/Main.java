@@ -1,6 +1,7 @@
 package it.unicam.cs.mpgc.rpg126523;
 
 
+import it.unicam.cs.mpgc.rpg126523.controller.GameEngine;
 import it.unicam.cs.mpgc.rpg126523.view.GuiController;
 import javafx.application.Application;
 
@@ -13,10 +14,12 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
     @Override
     public void start(Stage primaryStage) throws IOException {
-        GuiController t= new GuiController(primaryStage);
-        t.startApp();
+        GameEngine gameEngine = new GameEngine();
+        GuiController guiController= new GuiController(primaryStage,gameEngine);
+        guiController.startApp();
     }
 
 }
