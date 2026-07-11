@@ -1,4 +1,4 @@
-package it.unicam.cs.mpgc.rpg126523.model.career;
+package it.unicam.cs.mpgc.rpg126523.model.exam;
 
 public interface Exam {
 

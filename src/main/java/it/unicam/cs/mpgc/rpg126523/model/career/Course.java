@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg126523.model.career;
 
+import it.unicam.cs.mpgc.rpg126523.model.exam.Exam;
 import lombok.Getter;
 
 import java.util.Objects;
