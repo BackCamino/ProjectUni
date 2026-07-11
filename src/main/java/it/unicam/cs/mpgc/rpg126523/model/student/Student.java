@@ -1,11 +1,12 @@
 package it.unicam.cs.mpgc.rpg126523.model.student;
 
 import it.unicam.cs.mpgc.rpg126523.model.career.Career;
+import it.unicam.cs.mpgc.rpg126523.model.resource.Resource;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.Statistics;
+import it.unicam.cs.mpgc.rpg126523.model.task.Consequences;
 
 
-
-public interface Student {
+public interface Student extends ConsequencesApplier{
 
     public String getName();
 
@@ -15,7 +16,9 @@ public interface Student {
 
     public Statistics getStatistics();
 
-    //public Resources getResources();
+    public Resource getEnergy();
+
+    public Resource getStress();
 
     public Career getCareer();
 }

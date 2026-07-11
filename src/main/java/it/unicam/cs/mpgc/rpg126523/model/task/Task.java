@@ -1,11 +1,13 @@
 package it.unicam.cs.mpgc.rpg126523.model.task;
 
-public interface Task {
+public interface Task extends ConsequenceGenerator {
 
     String getDescription();
 
-    TaskResult execute();
+    void execute();
 
+    int getDuration();
 
+    boolean isPossibleToExecute();
 
 }
