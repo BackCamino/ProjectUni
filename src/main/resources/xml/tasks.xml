@@ -1,44 +1,76 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <tasks>
     <task>
-        <nome>
-            dormire
-        </nome>
-        <descrizione>
-            Lo studente va a dormire
-        </descrizione>
-        <duration>8</duration>
-        <ricompense>
-            <energia type="accumulo">10</energia>
-        </ricompense>
+        <name>
+            Dormire
+        </name>
+        <description>
+            Decidi ci voler andare a dormire
+        </description>
+        <duration>
+            8
+        </duration>
+        <consequences>
+            <energy type="increase">10</energy>
+        </consequences>
     </task>
     <task>
-        <nome>
+        <name>
             Lezione
-        </nome>
-        <descrizione>Andare a lezione</descrizione>
-        <duration>2</duration>
-        <ricompense>
-         <energia type="decremento"> 2</energia>
-          <conoscenza type="accumulo">2</conoscenza>
-        </ricompense>
+        </name>
+        <description>
+            Andare a lezione
+        </description>
+        <duration>
+            2
+        </duration>
+        <consequences>
+         <energy type="decrease">2</energy>
+         <!--   <knloedge type="increase">2</knloedge>-->
+        </consequences>
     </task>
     <task>
-        <nome>Studio in biblioteca</nome>
-        <descrizione>Ripassare gli appunti in biblioteca</descrizione>
-        <duration>3</duration>
-        <ricompense>
-            <energia type="decremento">3</energia>
-            <conoscenza type="accumulo">4</conoscenza>
-        </ricompense>
+        <name>
+            Studio in biblioteca
+        </name>
+        <description>
+            Ripassare gli appunti in biblioteca
+        </description>
+        <duration>
+            3
+        </duration>
+        <consequences>
+            <energy type="decrease">3</energy>
+            <conoscenza type="increase">4</conoscenza>
+        </consequences>
     </task>
     <task>
-        <nome>Partita a calcetto</nome>
-        <descrizione>Uscire con gli amici a giocare a calcetto</descrizione>
-        <duration>2</duration>
-        <ricompense>
-            <energia type="decremento">3</energia>
-            <stress type="decremento">3</stress>
-        </ricompense>
+        <name>
+            Partita a calcetto
+        </name>
+        <description>
+            Uscire con gli amici a giocare a calcetto
+        </description>
+        <duration>
+            2
+        </duration>
+        <consequences>
+            <energy type="decrease">3</energy>
+            <stress type="decrease">3</stress>
+        </consequences>
+    </task>
+    <task>
+        <name>
+            Mangiare
+        </name>
+        <description>
+            Mangiare qualcosa
+        </description>
+        <duration>
+            1
+        </duration>
+        <consequences>
+            <energy type="increase">5</energy>
+        </consequences>
     </task>
 </tasks>
