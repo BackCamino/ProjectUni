@@ -3,14 +3,13 @@ package it.unicam.cs.mpgc.rpg126523.model.student;
 import it.unicam.cs.mpgc.rpg126523.model.career.Career;
 import it.unicam.cs.mpgc.rpg126523.model.career.Course;
 import it.unicam.cs.mpgc.rpg126523.model.resource.SimpleResource;
-import it.unicam.cs.mpgc.rpg126523.model.task.TaskResult;
+import it.unicam.cs.mpgc.rpg126523.model.task.Consequences;
 import it.unicam.cs.mpgc.rpg126523.model.resource.Resource;
 import it.unicam.cs.mpgc.rpg126523.model.resource.ValueAdjustable;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.Statistics;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.StudentClass;
 import lombok.ToString;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @ToString
@@ -22,7 +21,10 @@ public class PlayerStudent implements Student {
     private final Gender gender;
     private final StudentClass studentClass;
     private final Statistics statistics;
-    private final Map<String, Resource> resources;
+
+    private final Resource energy;
+
+    private final Resource stress;
 
     private Career career;
     private Map<Course, ValueAdjustable> knowledge;
@@ -35,22 +37,20 @@ public class PlayerStudent implements Student {
         this.gender = gender;
         this.studentClass = studentClass;
         this.statistics = studentClass.createStatistics();
+        energy = new SimpleResource("Energia",0,30,30);
+        stress = new SimpleResource("Stress",0,20,0);
 
-        //TODO: da migliorare qui
-        resources = new HashMap<>(Map.of(
-                "Energia",new SimpleResource("Energia",0,30,30),
-                "Stress",new SimpleResource("Stress",0,20,0)
-        ));
 
     }
 
-    public PlayerStudent(String idNumber, String name, Gender gender, StudentClass studentClass, Statistics statistics, Map<String, Resource> resources) {
+    public PlayerStudent(String idNumber, String name, Gender gender, StudentClass studentClass, Statistics statistics, Resource energy, Resource stress) {
         this.idNumber = idNumber;
         this.name = name;
         this.gender = gender;
         this.studentClass = studentClass;
         this.statistics = statistics;
-        this.resources = resources;
+        this.energy = energy;
+        this.stress = stress;
     }
 
 
@@ -77,13 +77,21 @@ public class PlayerStudent implements Student {
     public Career getCareer() {
         return this.career;
     }
-
-
-    public void applyTaskResult(TaskResult result) {
-
+    @Override
+    public Resource getEnergy() {
+        return this.energy;
+    }
+    @Override
+    public Resource getStress() {
+        return this.stress;
     }
 
+    @Override
+    public void applyConsequences(Consequences result) {
+        this.energy.decrement(result.deltaEnergy());
+        this.stress.increment(result.deltaStress());
 
+    }
 
 
 
