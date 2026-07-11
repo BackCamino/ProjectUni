@@ -4,19 +4,29 @@ public class TaskDefault implements Task {
 
     private final String description;
     private final String name;
-    private int duration;
+    private final int duration;
+    private final int deltaEnergy;
+    private final int deltaStress;
 
-    public TaskDefault(String description,String name, int duration){
+
+    public TaskDefault(String description,String name, int duration, int deltaEnergy,int deltaStress){
         if(description.isEmpty()||name.isEmpty()||duration<0)
             throw new IllegalArgumentException("Valori non validi per l'oggetto Task");
         this.name=name;
         this.description=description;
         this.duration=duration;
+        this.deltaEnergy=deltaEnergy;
+        this.deltaStress=deltaStress;
+    }
+
+    @Override
+    public String getName(){
+        return this.name;
     }
 
     @Override
     public void execute() {
-        generateConsequences();
+        ;
     }
 
     @Override
@@ -37,6 +47,7 @@ public class TaskDefault implements Task {
 
     @Override
     public Consequences generateConsequences() {
-        return null;
+        return new Consequences(deltaEnergy,deltaStress);
+
     }
 }

@@ -88,11 +88,36 @@ public class PlayerStudent implements Student {
 
     @Override
     public void applyConsequences(Consequences result) {
-        this.energy.decrement(result.deltaEnergy());
-        this.stress.increment(result.deltaStress());
+        if(result.hasEnergyImpact())
+            applyEnergy(result.deltaEnergy());
+        if(result.hasStressImpact())
+            applyStress(result.deltaStress());
+        if(result.hasCourseReward())
+            this.knowledge.get(result.course()).increment(result.knowledge());
+    }
+
+    private void applyEnergy(int delta){
+        if(isIncrementValue(delta))
+            this.energy.increment(delta);
+        else if (isDecrementValue(delta))
+            this.energy.decrement(Math.abs(delta));
 
     }
 
+    private void applyStress(int delta){
+        if(isIncrementValue(delta))
+            this.stress.increment(delta);
+        else if (isDecrementValue(delta))
+            this.stress.decrement(Math.abs(delta));
+    }
+
+    private boolean isIncrementValue(int delta){
+        return delta > 0;
+    }
+
+    private boolean isDecrementValue(int delta){
+        return delta < 0;
+    }
 
 
 }

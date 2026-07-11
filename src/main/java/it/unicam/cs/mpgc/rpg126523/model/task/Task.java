@@ -10,4 +10,6 @@ public interface Task extends ConsequenceGenerator {
 
     boolean isPossibleToExecute();
 
+    String getName();
+
 }
