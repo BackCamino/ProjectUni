@@ -3,7 +3,7 @@ package it.unicam.cs.mpgc.rpg126523.model.student;
 import it.unicam.cs.mpgc.rpg126523.model.career.Career;
 import it.unicam.cs.mpgc.rpg126523.model.career.Course;
 import it.unicam.cs.mpgc.rpg126523.model.resource.SimpleResource;
-import it.unicam.cs.mpgc.rpg126523.model.task.Consequences;
+import it.unicam.cs.mpgc.rpg126523.model.consequences.Consequences;
 import it.unicam.cs.mpgc.rpg126523.model.resource.Resource;
 import it.unicam.cs.mpgc.rpg126523.model.resource.ValueAdjustable;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.Statistics;
@@ -15,19 +15,15 @@ import java.util.Map;
 @ToString
 public class PlayerStudent implements Student {
 
-
     private final String idNumber;
     private final String name;
     private final Gender gender;
     private final StudentClass studentClass;
     private final Statistics statistics;
-
     private final Resource energy;
-
     private final Resource stress;
-
     private Career career;
-    private Map<Course, ValueAdjustable> knowledge;
+    private Map<Integer, ValueAdjustable> knowledge;
 
 
     public PlayerStudent(String idNumber,String name, Gender gender, StudentClass studentClass) {
@@ -39,7 +35,6 @@ public class PlayerStudent implements Student {
         this.statistics = studentClass.createStatistics();
         energy = new SimpleResource("Energia",0,30,30);
         stress = new SimpleResource("Stress",0,20,0);
-
 
     }
 
@@ -93,9 +88,10 @@ public class PlayerStudent implements Student {
         if(result.hasStressImpact())
             applyStress(result.deltaStress());
         if(result.hasCourseReward())
-            this.knowledge.get(result.course()).increment(result.knowledge());
+            this.knowledge.get(result.idCourse()).increment(result.knowledge());
     }
 
+    //TODO: da inserire che anche le statistiche fanno variare il delta
     private void applyEnergy(int delta){
         if(isIncrementValue(delta))
             this.energy.increment(delta);

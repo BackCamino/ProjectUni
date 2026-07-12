@@ -1,4 +1,4 @@
-package it.unicam.cs.mpgc.rpg126523.model.task;
+package it.unicam.cs.mpgc.rpg126523.model.consequences;
 
 /**
  * Generatore di conseguenze, l'oggetto che implementa questa interfaccia sarà in grado di create una Conseguenza

@@ -1,6 +1,7 @@
 package it.unicam.cs.mpgc.rpg126523.model.task;
 
 import it.unicam.cs.mpgc.rpg126523.model.career.Course;
+import it.unicam.cs.mpgc.rpg126523.model.consequences.Consequences;
 
 public class TaskUniversity implements Task {
     private final String description;
@@ -8,15 +9,15 @@ public class TaskUniversity implements Task {
     private final int duration;
     private final int deltaEnergy;
     private final int deltaStress;
-    private Course course;
+    private final Integer idCourse;
     private final int knowledge;
-    public TaskUniversity(String name,String description,int duration, int deltaEnergy, int deltaStress, Course course, int knowledge) {
+    public TaskUniversity(String name,String description,int duration, int deltaEnergy, int deltaStress, Integer idCourse, int knowledge) {
         this.name = name;
         this.description = description;
         this.duration = duration;
         this.deltaEnergy = deltaEnergy;
         this.deltaStress = deltaStress;
-        this.course = course;
+        this.idCourse = idCourse;
         this.knowledge = knowledge;
     }
 
@@ -47,6 +48,6 @@ public class TaskUniversity implements Task {
 
     @Override
     public Consequences generateConsequences() {
-        return new Consequences(deltaEnergy,deltaStress,course,knowledge);
+        return new Consequences(deltaEnergy,deltaStress,idCourse,knowledge);
     }
 }

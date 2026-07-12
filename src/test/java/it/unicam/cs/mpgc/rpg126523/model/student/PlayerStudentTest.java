@@ -1,7 +1,7 @@
 package it.unicam.cs.mpgc.rpg126523.model.student;
 
 import it.unicam.cs.mpgc.rpg126523.model.statistics.AthleteFactory;
-import it.unicam.cs.mpgc.rpg126523.model.task.Consequences;
+import it.unicam.cs.mpgc.rpg126523.model.consequences.Consequences;
 import it.unicam.cs.mpgc.rpg126523.model.task.Task;
 import it.unicam.cs.mpgc.rpg126523.model.task.TaskDefault;
 import org.junit.jupiter.api.BeforeEach;

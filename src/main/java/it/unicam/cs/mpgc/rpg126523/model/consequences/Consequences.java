@@ -1,15 +1,15 @@
-package it.unicam.cs.mpgc.rpg126523.model.task;
+package it.unicam.cs.mpgc.rpg126523.model.consequences;
 
 import it.unicam.cs.mpgc.rpg126523.model.career.Course;
 
-public record Consequences(int deltaEnergy, int deltaStress, Course course, int knowledge ) {
+public record Consequences(int deltaEnergy, int deltaStress, Integer idCourse, int knowledge ) {
 
     public Consequences(int deltaEnergy, int deltaStress) {
         this(deltaEnergy, deltaStress, null, 0); // Chiama il costruttore principale
     }
 
     public boolean hasCourseReward(){
-        return course != null;
+        return idCourse != null;
     }
 
     public boolean hasStressImpact(){

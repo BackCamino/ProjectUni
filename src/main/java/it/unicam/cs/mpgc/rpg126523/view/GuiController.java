@@ -51,10 +51,14 @@ public class GuiController implements Navigator {
         this.loadScene("NewPlayerCreation","/fxml/create-player.fxml");
     }
 
-
     @Override
     public void showGame() {
         this.loadScene("ProjectUni","/fxml/game.fxml");
+    }
+
+    @Override
+    public void showComingSoon() {
+        this.loadScene("Coming Soon","/fxml/coming-soon.fxml");
     }
 
     @Override

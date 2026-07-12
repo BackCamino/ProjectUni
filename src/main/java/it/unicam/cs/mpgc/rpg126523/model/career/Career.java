@@ -1,5 +1,7 @@
 package it.unicam.cs.mpgc.rpg126523.model.career;
 
+import javafx.scene.layout.CornerRadii;
+
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -39,5 +41,9 @@ public class Career {
         return courses.stream().filter(c->c.getStatus().equals(CourseStatus.PASSED)).collect(Collectors.toSet());
     }
 
+    public Course getCourseById(int id){
+        return courses.stream().filter(c->c.getId()==id).findFirst().orElse(null);
+
+    }
 
 }

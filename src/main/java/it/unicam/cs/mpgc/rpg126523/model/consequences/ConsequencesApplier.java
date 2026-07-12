@@ -1,6 +1,4 @@
-package it.unicam.cs.mpgc.rpg126523.model.student;
-
-import it.unicam.cs.mpgc.rpg126523.model.task.Consequences;
+package it.unicam.cs.mpgc.rpg126523.model.consequences;
 
 /**
  * Interfaccia che offre il comportamento di gestire una conseguenza passata
