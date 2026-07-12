@@ -11,5 +11,7 @@ public interface Navigator {
 
     public void showGame();
 
+    public void showComingSoon();
+
     GameEngine getGameEngine();
 }

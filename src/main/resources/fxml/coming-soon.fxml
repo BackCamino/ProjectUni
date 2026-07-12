@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="coming-soon" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.mpgc.rpg126523.view.ComingSoonController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Funzionalità non ancora implementata" />
+      <Button onAction="#goBack" mnemonicParsing="false" text="Torna Indietro" />
+   </children>
+</VBox>

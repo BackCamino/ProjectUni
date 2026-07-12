@@ -128,3 +128,21 @@
 .button-avvia:pressed {
     -fx-background-color: #3E8058;
 }
+
+.coming-soon{
+    -fx-background-color: #241B2E;
+    -fx-spacing: 20px;
+}
+
+.coming-soon Text{
+    -fx-fill: #FFF2AF;
+    -fx-font-size: 30px;
+}
+
+.coming-soon Button{
+    -fx-text-fill: #FFF2AF;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 300px;
+    -fx-background-color: #493D9E;
+}
