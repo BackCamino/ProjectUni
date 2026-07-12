@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<courses>
+    <course id="101">
+        <name>Programmazione</name>
+        <cfu>12</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>100</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="102">
+        <name>Matematica Generale</name>
+        <cfu>12</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>70</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="103">
+        <name>Fondamenti di Informatica</name>
+        <cfu>6</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>120</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="104">
+        <name>Architettura degli Elaboratori</name>
+        <cfu>12</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>80</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="105">
+        <name>Business e Management nell'Information Technology</name>
+        <cfu>6</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>70</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="106">
+        <name>Calcolo della Probabilità e Statistica</name>
+        <cfu>6</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>60</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="107">
+        <name>Inglese - Livello B2</name>
+        <cfu>6</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>40</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="108">
+        <name>Algoritmi e Strutture Dati</name>
+        <cfu>12</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>50</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="109">
+        <name>Internet, Reti e Sicurezza</name>
+        <cfu>12</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>60</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="110">
+        <name>Basi di Dati</name>
+        <cfu>12</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>85</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="111">
+        <name>Sistemi Operativi</name>
+        <cfu>6</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>75</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="112">
+        <name>Metodologie e Strumenti di Programmazione</name>
+        <cfu>12</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>110</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="113">
+        <name>Ricerca Operativa</name>
+        <cfu>6</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>120</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="114">
+        <name>Ingegneria del Software</name>
+        <cfu>12</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>68</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="115">
+        <name>Paradigmi Avanzati di Programmazione</name>
+        <cfu>12</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>59</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="116">
+        <name>Linguaggi e Compilatori</name>
+        <cfu>6</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>46</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="117">
+        <name>Stage</name>
+        <cfu>12</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>86</requiredKnowledge>
+        </exam>
+    </course>
+    <course id="118">
+        <name>Prova Finale</name>
+        <cfu>6</cfu>
+        <exam>
+            <type>general</type>
+            <requiredKnowledge>47</requiredKnowledge>
+        </exam>
+    </course>
+</courses>
