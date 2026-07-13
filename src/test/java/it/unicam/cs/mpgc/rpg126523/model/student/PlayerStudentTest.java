@@ -43,6 +43,5 @@ class PlayerStudentTest {
         System.out.println("Stress:"+ student.getStress().getValue());
         System.out.println("Energia:"+ student.getEnergy().getValue());
 
-        //TODO: si potranno mettere in base al cap che si raggiunge delle notifiche del tipo sei troppo stanco ecc
     }
 }
