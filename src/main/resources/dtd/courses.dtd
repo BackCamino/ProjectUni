@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!ELEMENT courses (course+)>
+        <!ELEMENT course (name, cfu, exam)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT cfu (#PCDATA)>
+        <!ELEMENT exam (type, requiredKnowledge)>
+        <!ELEMENT type (#PCDATA)>
+        <!ELEMENT requiredKnowledge (#PCDATA)>
+        <!ATTLIST course id CDATA #REQUIRED>
