@@ -10,6 +10,8 @@ import it.unicam.cs.mpgc.rpg126523.view.custom.TaskCell;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
@@ -40,6 +42,7 @@ public class GameController implements HasNavigator, Initializable,HasGameEngine
     public Text days_remaining;
     public Text current_day;
     public ProgressBar cup_bar;
+    public Button attempt_btn;
     @FXML
     Text energy_value;
     @FXML
@@ -111,15 +114,33 @@ public class GameController implements HasNavigator, Initializable,HasGameEngine
         this.gameEngine.runTask();
         refreshResources(this.gameEngine.showPlayer());
         refreshDailyInfo();
+
     }
 
     private void refreshDailyInfo(){
         this.days_remaining.setText(this.gameEngine.showDailyRemaining());
         this.current_day.setText(this.gameEngine.showCurrentDay());
+        if(this.gameEngine.isExamDay()){
+            this.attempt_btn.setDisable(false);
+        }
     }
 
     private void loadDailyInfo(){
         refreshDailyInfo();
+    }
+
+    @FXML
+    void attemptExam(ActionEvent event) {
+
+        showAlert(this.gameEngine.attemptExam());
+    }
+
+    public void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Esito");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 }

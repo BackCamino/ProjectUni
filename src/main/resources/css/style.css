@@ -96,8 +96,7 @@
 }
 
 
-.button-pausa, .button-avvia {
-    -fx-text-fill: #FFF2AF;
+.button-attempt, .button-start {
     -fx-font-size: 15px;
     -fx-font-weight: bold;
     -fx-background-radius: 8px;
@@ -105,29 +104,17 @@
     -fx-cursor: hand;
 }
 
-.button-pausa {
-    -fx-background-color: #A94442;
+.button-attempt {
+    -fx-background-color: #FFF2AF;
+    -fx-text-fill:#493D9E;
+
 }
 
-.button-pausa:hover {
-    -fx-background-color: #C0524F;
-}
-
-.button-pausa:pressed {
-    -fx-background-color: #8F3936;
-}
-
-.button-avvia {
+.button-start {
     -fx-background-color: #4C9A6B;
+    -fx-text-fill: #FFF2AF;
 }
 
-.button-avvia:hover {
-    -fx-background-color: #5CAE7C;
-}
-
-.button-avvia:pressed {
-    -fx-background-color: #3E8058;
-}
 
 .coming-soon{
     -fx-background-color: #241B2E;

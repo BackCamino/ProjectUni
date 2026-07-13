@@ -3,6 +3,7 @@ package it.unicam.cs.mpgc.rpg126523.controller;
 
 import it.unicam.cs.mpgc.rpg126523.model.Game;
 import it.unicam.cs.mpgc.rpg126523.model.career.Course;
+import it.unicam.cs.mpgc.rpg126523.model.exam.Exam;
 import it.unicam.cs.mpgc.rpg126523.model.exam.GeneralExam;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.StudentClass;
 import it.unicam.cs.mpgc.rpg126523.model.student.Gender;
@@ -15,20 +16,30 @@ import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class GameEngine {
 
     private Game game;
     private Student player;
     private List<Task> daily_tasks;
+    private Set<Course> courseSelected;
+    private Course nextExamCourse;
 
 
     public GameEngine(Game game) {
         this.game = game;
+
+
     }
 
     public GameEngine(){
+        selectCoursesToFollow();
+        nextExamCourse = this.courseSelected.stream().filter(c->c.getId()==101).findFirst().get();
+    }
 
+    public void selectCoursesToFollow(){
+        this.courseSelected=Set.of(new Course(101,"Programmazione",12, new GeneralExam(40,"general")));
     }
 
     public boolean loadStudent(){
@@ -40,7 +51,7 @@ public class GameEngine {
     public void createPlayer(String idNumber, String name, Gender gender, StudentClass studentclass){
         PlayerStudentFactory playerStudentFactory = new PlayerStudentFactory();
         this.player= playerStudentFactory.createStudent(idNumber, name, gender, studentclass);
-        this.player.addSelectedCourses(List.of(new Course(101,"Programmazione",12, new GeneralExam(40,"general"))));
+        this.player.addSelectedCourses(courseSelected);
         this.game= new Game(this.player);
     }
 
@@ -120,5 +131,13 @@ public class GameEngine {
 
     public String showCurrentDay() {
         return String.valueOf(this.game.getCurrentDay());
+    }
+
+    public boolean isExamDay() {
+        return this.game.getCurrentDay()==this.game.getTargetDay();
+    }
+
+    public String attemptExam() {
+        return this.nextExamCourse.getExam().attempt(this.player.getKnowledgePoints(nextExamCourse.getId()));
     }
 }

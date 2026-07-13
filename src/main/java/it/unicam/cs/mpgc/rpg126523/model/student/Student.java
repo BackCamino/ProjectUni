@@ -8,6 +8,7 @@ import it.unicam.cs.mpgc.rpg126523.model.statistics.Statistics;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.StudentClass;
 
 import java.util.List;
+import java.util.Set;
 
 
 public interface Student extends ConsequencesApplier {
@@ -26,7 +27,10 @@ public interface Student extends ConsequencesApplier {
 
     public StudentClass getStudentClass();
 
-    public void addSelectedCourses(List<Course> courses);
+    public void addSelectedCourses(Set<Course> courses);
+
+    public int getKnowledgePoints(int idCourse);
+
 
     public Career getCareer();
 }

@@ -14,6 +14,7 @@ import lombok.ToString;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @ToString
 public class PlayerStudent implements Student {
@@ -26,7 +27,7 @@ public class PlayerStudent implements Student {
     private final Resource energy;
     private final Resource stress;
     private Career career;
-    private Map<Integer, ValueAdjustable> knowledge;
+    private final Map<Integer, ValueAdjustable> knowledge;
 
 
     public PlayerStudent(String idNumber,String name, Gender gender, StudentClass studentClass) {
@@ -53,7 +54,6 @@ public class PlayerStudent implements Student {
         this.knowledge = knowledge;
     }
 
-
     @Override
     public String getName() {
         return this.name;
@@ -77,10 +77,12 @@ public class PlayerStudent implements Student {
     public Career getCareer() {
         return this.career;
     }
+
     @Override
     public Resource getEnergy() {
         return this.energy;
     }
+
     @Override
     public Resource getStress() {
         return this.stress;
@@ -91,8 +93,13 @@ public class PlayerStudent implements Student {
         return this.studentClass;
     }
 
-    public void addSelectedCourses(List<Course> courses){
+    public void addSelectedCourses(Set<Course> courses){
         courses.forEach(this::createKnowledgeForCourse);
+    }
+
+    @Override
+    public int getKnowledgePoints(int idCourse) {
+        return this.knowledge.get(idCourse).getValue();
     }
 
     private void createKnowledgeForCourse(Course course){

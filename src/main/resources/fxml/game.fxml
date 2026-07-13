@@ -86,8 +86,8 @@
          <bottom>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" styleClass="button-pausa" text="Pausa" />
-                  <Button mnemonicParsing="false" onAction="#startDaily" styleClass="button-avvia" text="Avvia" />
+                  <Button fx:id="attempt_btn" onAction="#attemptExam" mnemonicParsing="false" styleClass="button-attempt" text="Tenta esame" disable="true"/>
+                  <Button mnemonicParsing="false" onAction="#startDaily" styleClass="button-start" text="Avvia giornata" />
                </children>
             </HBox>
          </bottom>
@@ -108,7 +108,7 @@
                         <Text fx:id="current_day" strokeType="OUTSIDE" strokeWidth="0.0" />
                      </children>
                   </HBox>
-                  <HBox alignment="BASELINE_LEFT" prefHeight="20.0" prefWidth="436.0" styleClass=".top">
+                  <HBox alignment="BASELINE_LEFT" prefHeight="20.0" prefWidth="436.0">
                      <children>
                         <Label text="Giorni Rimanenti" />
                         <Text fx:id="days_remaining" strokeType="OUTSIDE" strokeWidth="0.0" />

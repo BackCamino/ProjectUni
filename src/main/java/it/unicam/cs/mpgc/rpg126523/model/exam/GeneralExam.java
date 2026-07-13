@@ -10,7 +10,7 @@ public class GeneralExam implements Exam{
     }
 
     @Override
-    public void attempt() {
-
+    public String attempt(int knowledge) {
+        return this.knowledgeRequired<knowledge? "Esame superato": "Bocciato";
     }
 }
