@@ -68,13 +68,19 @@ public class GameController implements HasNavigator, Initializable,HasGameEngine
         available_tasks.setOnMouseClicked(event -> {
             Task task = available_tasks.getSelectionModel().getSelectedItem();
             daily_tasks.getItems().add(task);
+            updateProgress();
         });
 
         daily_tasks.setOnMouseClicked(event -> {
             daily_tasks.getItems().remove(daily_tasks.getSelectionModel().getSelectedItem());
+            updateProgress();
         });
-
     }
+    private void updateProgress() {
+        double progress = (double) getHoursUsedToday() / 24;
+        cup_bar.setProgress(progress);
+    }
+
 
     @Override
     public void setGameEngine(GameEngine gameEngine) {
@@ -114,6 +120,7 @@ public class GameController implements HasNavigator, Initializable,HasGameEngine
         this.gameEngine.runTask();
         refreshResources(this.gameEngine.showPlayer());
         refreshDailyInfo();
+        updateProgress();
 
     }
 
@@ -127,6 +134,7 @@ public class GameController implements HasNavigator, Initializable,HasGameEngine
 
     private void loadDailyInfo(){
         refreshDailyInfo();
+
     }
 
     @FXML
@@ -143,4 +151,9 @@ public class GameController implements HasNavigator, Initializable,HasGameEngine
         alert.showAndWait();
     }
 
+    private int getHoursUsedToday(){
+        return this.daily_tasks.getItems().stream()
+                .mapToInt(Task::getDuration) // Oppure usando la method reference: Task::getDuration
+                .sum();
+    }
 }

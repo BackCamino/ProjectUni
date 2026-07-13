@@ -27,10 +27,9 @@ public class GameEngine {
     private Course nextExamCourse;
 
 
+
     public GameEngine(Game game) {
         this.game = game;
-
-
     }
 
     public GameEngine(){
@@ -66,10 +65,9 @@ public class GameEngine {
     public void runTask(){
         if(checkCup()){
             daily_tasks.stream().map(Task::execute).forEach(c->player.applyConsequences(c));
+            this.daily_tasks.clear();
+            this.game.incrementDay();
         }
-        this.daily_tasks.clear();
-        this.game.incrementDay();
-
 
     }
 
@@ -79,6 +77,8 @@ public class GameEngine {
                 .sum();
         return totaleDurata <=24;
     }
+
+
 
     //TODO: DA LEVARE
     public List<Task> getAvailableTasks() {
