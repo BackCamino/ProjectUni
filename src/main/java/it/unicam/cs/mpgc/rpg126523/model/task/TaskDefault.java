@@ -33,8 +33,8 @@ public class TaskDefault implements Task {
     }
 
     @Override
-    public boolean isPossibleToExecute() {
-        return false;
+    public Consequences execute() {
+        return generateConsequences();
     }
 
     @Override
@@ -42,7 +42,6 @@ public class TaskDefault implements Task {
         return description;
 
     }
-
 
     @Override
     public Consequences generateConsequences() {

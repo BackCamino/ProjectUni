@@ -2,6 +2,7 @@ package it.unicam.cs.mpgc.rpg126523.model.student;
 
 import it.unicam.cs.mpgc.rpg126523.model.career.Career;
 import it.unicam.cs.mpgc.rpg126523.model.career.Course;
+import it.unicam.cs.mpgc.rpg126523.model.resource.KnowledgeValue;
 import it.unicam.cs.mpgc.rpg126523.model.resource.SimpleResource;
 import it.unicam.cs.mpgc.rpg126523.model.consequences.Consequences;
 import it.unicam.cs.mpgc.rpg126523.model.resource.Resource;
@@ -10,6 +11,8 @@ import it.unicam.cs.mpgc.rpg126523.model.statistics.Statistics;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.StudentClass;
 import lombok.ToString;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @ToString
@@ -35,10 +38,11 @@ public class PlayerStudent implements Student {
         this.statistics = studentClass.createStatistics();
         energy = new SimpleResource("Energia",0,30,30);
         stress = new SimpleResource("Stress",0,20,0);
+        this.knowledge = new HashMap<>();
 
     }
 
-    public PlayerStudent(String idNumber, String name, Gender gender, StudentClass studentClass, Statistics statistics, Resource energy, Resource stress) {
+    public PlayerStudent(String idNumber, String name, Gender gender, StudentClass studentClass, Statistics statistics, Resource energy, Resource stress,Map<Integer, ValueAdjustable> knowledge) {
         this.idNumber = idNumber;
         this.name = name;
         this.gender = gender;
@@ -46,6 +50,7 @@ public class PlayerStudent implements Student {
         this.statistics = statistics;
         this.energy = energy;
         this.stress = stress;
+        this.knowledge = knowledge;
     }
 
 
@@ -86,14 +91,25 @@ public class PlayerStudent implements Student {
         return this.studentClass;
     }
 
+    public void addSelectedCourses(List<Course> courses){
+        courses.forEach(this::createKnowledgeForCourse);
+    }
+
+    private void createKnowledgeForCourse(Course course){
+        this.knowledge.put(course.getId(),new KnowledgeValue(0,100,0));
+    }
+
     @Override
     public void applyConsequences(Consequences result) {
         if(result.hasEnergyImpact())
             applyEnergy(result.deltaEnergy());
         if(result.hasStressImpact())
             applyStress(result.deltaStress());
-        if(result.hasCourseReward())
+        if(result.hasCourseReward()){
             this.knowledge.get(result.idCourse()).increment(result.knowledge());
+            System.out.println(this.knowledge.get(result.idCourse()).getValue());
+        }
+
     }
 
     //TODO: da inserire che anche le statistiche fanno variare il delta

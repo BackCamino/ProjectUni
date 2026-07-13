@@ -34,8 +34,8 @@ public class TaskUniversity implements Task {
     }
 
     @Override
-    public boolean isPossibleToExecute() {
-        return false;
+    public Consequences execute() {
+        return generateConsequences();
     }
 
     @Override

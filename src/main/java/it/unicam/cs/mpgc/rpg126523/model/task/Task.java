@@ -1,6 +1,7 @@
 package it.unicam.cs.mpgc.rpg126523.model.task;
 
 import it.unicam.cs.mpgc.rpg126523.model.consequences.ConsequenceGenerator;
+import it.unicam.cs.mpgc.rpg126523.model.consequences.Consequences;
 
 public interface Task extends ConsequenceGenerator {
 
@@ -8,7 +9,8 @@ public interface Task extends ConsequenceGenerator {
 
     int getDuration();
 
-    boolean isPossibleToExecute();
+    Consequences execute();
+
 
     String getName();
 

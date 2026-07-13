@@ -87,7 +87,7 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
                   <Button mnemonicParsing="false" styleClass="button-pausa" text="Pausa" />
-                  <Button mnemonicParsing="false" styleClass="button-avvia" text="Avvia" />
+                  <Button mnemonicParsing="false" onAction="#startDaily" styleClass="button-avvia" text="Avvia" />
                </children>
             </HBox>
          </bottom>
@@ -100,11 +100,17 @@
             </VBox>
          </center>
          <top>
-            <VBox prefHeight="118.0" prefWidth="436.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="118.0" prefWidth="436.0" styleClass="top" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="BASELINE_LEFT" prefHeight="100.0" prefWidth="200.0">
+                  <HBox alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="436.0">
                      <children>
-                        <Label text="Giorni RImanenti:" />
+                        <Label text="Giorno odierno" />
+                        <Text fx:id="current_day" strokeType="OUTSIDE" strokeWidth="0.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BASELINE_LEFT" prefHeight="20.0" prefWidth="436.0" styleClass=".top">
+                     <children>
+                        <Label text="Giorni Rimanenti" />
                         <Text fx:id="days_remaining" strokeType="OUTSIDE" strokeWidth="0.0" />
                      </children>
                   </HBox>

@@ -200,3 +200,8 @@
 .left-pane ListView{
     -fx-background-color: #241B2E;
 }
+
+.top{
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+}

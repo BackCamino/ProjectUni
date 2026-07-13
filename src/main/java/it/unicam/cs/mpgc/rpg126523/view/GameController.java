@@ -7,9 +7,11 @@ import it.unicam.cs.mpgc.rpg126523.model.student.Gender;
 import it.unicam.cs.mpgc.rpg126523.model.student.Student;
 import it.unicam.cs.mpgc.rpg126523.model.task.Task;
 import it.unicam.cs.mpgc.rpg126523.view.custom.TaskCell;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -35,6 +37,9 @@ public class GameController implements HasNavigator, Initializable,HasGameEngine
     public Text composure_value;
     @FXML
     public Text id_txt;
+    public Text days_remaining;
+    public Text current_day;
+    public ProgressBar cup_bar;
     @FXML
     Text energy_value;
     @FXML
@@ -73,6 +78,7 @@ public class GameController implements HasNavigator, Initializable,HasGameEngine
         this.gameEngine = gameEngine;
         displayPlayer();
         loadAvailableTasks(gameEngine.getAvailableTasks());
+        loadDailyInfo();
     }
 
     private void displayPlayer(){
@@ -86,8 +92,7 @@ public class GameController implements HasNavigator, Initializable,HasGameEngine
         this.vigor_value.setText(String.valueOf(student.getStatistics().getValueFromStatistic(StatisticType.VIGOR)));
         this.composure_value.setText(String.valueOf(student.getStatistics().getValueFromStatistic(StatisticType.COMPOSURE)));
         this.ingenuity_value.setText(String.valueOf(student.getStatistics().getValueFromStatistic(StatisticType.INGENUITY)));
-        this.energy_value.setText(String.valueOf(student.getEnergy().getValue()));
-        this.stress_value.setText(String.valueOf(student.getStress().getValue()));
+        refreshResources(student);
     }
 
     private void loadAvailableTasks(List<Task> availableTasks){
@@ -95,6 +100,26 @@ public class GameController implements HasNavigator, Initializable,HasGameEngine
         this.available_tasks.getItems().addAll(availableTasks);
     }
 
+    private void refreshResources(Student student){
+        this.energy_value.setText(String.valueOf(student.getEnergy().getValue()));
+        this.stress_value.setText(String.valueOf(student.getStress().getValue()));
+    }
 
+    @FXML
+    void startDaily(ActionEvent event) {
+        this.gameEngine.loadDailyTask(daily_tasks.getItems());
+        this.gameEngine.runTask();
+        refreshResources(this.gameEngine.showPlayer());
+        refreshDailyInfo();
+    }
+
+    private void refreshDailyInfo(){
+        this.days_remaining.setText(this.gameEngine.showDailyRemaining());
+        this.current_day.setText(this.gameEngine.showCurrentDay());
+    }
+
+    private void loadDailyInfo(){
+        refreshDailyInfo();
+    }
 
 }
