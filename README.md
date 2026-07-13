@@ -11,7 +11,7 @@ ProjectUni è un alpha di un gioco rpg task manager che ambienta il giocatore in
 * E altro ancora.
   
 ## 🕹️​ Cosa si puo fare
-Una volta creato il personaggio, il gioco stan nel pianificare le attività, la meccanica viene spiegata meglio nella [wiki](Wiki/Home.md)
+Una volta creato il personaggio, il gioco stan nel pianificare le attività, la meccanica viene spiegata meglio nella Wiki.
 
 ## 🚀 Come eseguire il progetto
 
