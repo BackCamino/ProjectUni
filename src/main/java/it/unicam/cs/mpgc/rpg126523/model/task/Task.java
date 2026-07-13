@@ -6,8 +6,6 @@ public interface Task extends ConsequenceGenerator {
 
     String getDescription();
 
-    void execute();
-
     int getDuration();
 
     boolean isPossibleToExecute();

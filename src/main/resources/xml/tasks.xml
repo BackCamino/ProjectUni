@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <tasks>
-    <task>
+    <task type="default">
         <name>
             Dormire
         </name>
@@ -14,7 +14,7 @@
             <energy type="increase">10</energy>
         </consequences>
     </task>
-    <task>
+    <task type="university">
         <name>
             Lezione
         </name>
@@ -25,11 +25,11 @@
             2
         </duration>
         <consequences>
-         <energy type="decrease">2</energy>
-         <!--   <knloedge type="increase">2</knloedge>-->
+            <energy type="decrease">2</energy>
+            <knowledge type="increase">5</knowledge>
         </consequences>
     </task>
-    <task>
+    <task type="university">
         <name>
             Studio in biblioteca
         </name>
@@ -41,11 +41,11 @@
         </duration>
         <consequences>
             <energy type="decrease">3</energy>
-            <conoscenza type="increase">4</conoscenza>
+            <knowledge type="increase">4</knowledge>
         </consequences>
     </task>
-    <task>
-        <name>
+    <task type="default">
+        <name >
             Partita a calcetto
         </name>
         <description>
@@ -59,7 +59,7 @@
             <stress type="decrease">3</stress>
         </consequences>
     </task>
-    <task>
+    <task type="default">
         <name>
             Mangiare
         </name>

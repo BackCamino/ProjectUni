@@ -6,7 +6,7 @@ import lombok.Getter;
 public class Game {
     private int currentDay;
     @Getter
-    private Student  playerStudent;
+    private Student playerStudent;
 
     public Game(int currentDay, Student playerStudent) {
         this.currentDay = currentDay;

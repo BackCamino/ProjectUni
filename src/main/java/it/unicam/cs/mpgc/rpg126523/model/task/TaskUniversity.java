@@ -26,10 +26,7 @@ public class TaskUniversity implements Task {
         return this.description;
     }
 
-    @Override
-    public void execute() {
 
-    }
 
     @Override
     public int getDuration() {

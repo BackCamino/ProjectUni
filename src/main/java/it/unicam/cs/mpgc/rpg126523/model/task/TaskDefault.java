@@ -26,10 +26,6 @@ public class TaskDefault implements Task {
         return this.name;
     }
 
-    @Override
-    public void execute() {
-        ;
-    }
 
     @Override
     public int getDuration() {
@@ -46,6 +42,7 @@ public class TaskDefault implements Task {
         return description;
 
     }
+
 
     @Override
     public Consequences generateConsequences() {

@@ -6,26 +6,22 @@ import it.unicam.cs.mpgc.rpg126523.model.statistics.DiscriminatedFactory;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.OverachieverFactory;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.StudentClass;
 import it.unicam.cs.mpgc.rpg126523.model.student.Gender;
-import it.unicam.cs.mpgc.rpg126523.model.student.PlayerStudentFactory;
-import it.unicam.cs.mpgc.rpg126523.model.student.Student;
-import it.unicam.cs.mpgc.rpg126523.model.student.StudentFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import lombok.Setter;
 
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CreatePlayerController implements Initializable,HasNavigator {
+public class CreatePlayerController implements Initializable,HasNavigator, HasGameEngine {
 
     public ToggleButton girlAvatar;
     public ToggleButton genderlessAvatar;
     private Navigator guiController;
-
+    private GameEngine gameEngine;
 
     @FXML
     public TextField idNumber_txtfld;
@@ -42,9 +38,14 @@ public class CreatePlayerController implements Initializable,HasNavigator {
     @FXML
     public void createPlayer() {
         Gender gender=(Gender) avatars.getSelectedToggle().getUserData();
-        guiController.getGameEngine().createPlayer(idNumber_txtfld.getText(),name_txtfld.getText(),gender, class_choicebox.getValue());
-
+        this.gameEngine.createPlayer(idNumber_txtfld.getText(),name_txtfld.getText(),gender, class_choicebox.getValue());
         guiController.showGame();
+    }
+    @Override
+    public void setGameEngine(GameEngine gameEngine) {
+        if(gameEngine==null)
+            throw new NullPointerException("Game Engine is null");
+        this.gameEngine = gameEngine;
     }
 
     @Override

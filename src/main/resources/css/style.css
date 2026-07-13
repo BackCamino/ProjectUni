@@ -71,7 +71,7 @@
     -fx-spacing: 10px;
     -fx-padding: 5px;
     -fx-border-color: transparent #4A3D5C transparent transparent;
-    -fx-border-width: 0 1px 0 0;
+    -fx-border-width: 0 2px 0 0;
 }
 
 .game Text{
@@ -145,4 +145,58 @@
     -fx-font-weight: bold;
     -fx-pref-width: 300px;
     -fx-background-color: #493D9E;
+}
+
+
+.task-card {
+    -fx-background-color: #493D9E;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #FFF2AF;
+    -fx-border-width: 1;
+    -fx-padding: 6;
+    -fx-spacing: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0, 0, 2);
+}
+
+.task-card:hover {
+    -fx-background-color: derive(#493D9E, 15%);
+    -fx-cursor: hand;
+}
+
+.task-card .title {
+    -fx-fill: #FFF2AF;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.task-card .description {
+    -fx-fill: #FFF2AF;
+    -fx-font-size: 12px;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 4;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: transparent;
+}
+
+.center-pane{
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+}
+.center-pane ListView{
+    -fx-background-color: #241B2E;
+}
+
+.left-pane{
+    -fx-border-color: transparent transparent transparent #4A3D5C ;
+    -fx-border-width: 0 0 0 2px;
+}
+
+.left-pane ListView{
+    -fx-background-color: #241B2E;
 }

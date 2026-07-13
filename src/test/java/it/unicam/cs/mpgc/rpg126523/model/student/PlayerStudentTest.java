@@ -28,7 +28,7 @@ class PlayerStudentTest {
         Task t1=new TaskDefault("Prova1","t1",3,-5,6);
         System.out.println("Stress: "+student.getStress().getValue());
         System.out.println("Energia:" +student.getEnergy().getValue());
-        t1.execute();
+
         Consequences c1= t1.generateConsequences();
 
         student.applyConsequences(c1);

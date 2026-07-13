@@ -82,6 +82,11 @@ public class PlayerStudent implements Student {
     }
 
     @Override
+    public StudentClass getStudentClass() {
+        return this.studentClass;
+    }
+
+    @Override
     public void applyConsequences(Consequences result) {
         if(result.hasEnergyImpact())
             applyEnergy(result.deltaEnergy());

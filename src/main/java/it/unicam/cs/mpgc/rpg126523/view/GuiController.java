@@ -33,14 +33,22 @@ public class GuiController implements Navigator {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
             Scene root = new Scene(loader.load());
-            HasNavigator hasNavigator= loader.getController();
-            hasNavigator.setNavigator(this);
+            loadController(loader.getController());
             stage.setScene(root);
             stage.show();
         }catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+        private void loadController(Object controller) {
+            if(controller instanceof HasNavigator hasNavigator) {
+                hasNavigator.setNavigator(this);
+            }
+            if(controller instanceof HasGameEngine hasGameEngine) {
+                hasGameEngine.setGameEngine(gameEngine);
+            }
+        }
 
 
     public void showMenu() {
@@ -51,6 +59,7 @@ public class GuiController implements Navigator {
         this.loadScene("NewPlayerCreation","/fxml/create-player.fxml");
     }
 
+
     @Override
     public void showGame() {
         this.loadScene("ProjectUni","/fxml/game.fxml");
@@ -59,11 +68,6 @@ public class GuiController implements Navigator {
     @Override
     public void showComingSoon() {
         this.loadScene("Coming Soon","/fxml/coming-soon.fxml");
-    }
-
-    @Override
-    public GameEngine getGameEngine() {
-        return this.gameEngine;
     }
 
 }
