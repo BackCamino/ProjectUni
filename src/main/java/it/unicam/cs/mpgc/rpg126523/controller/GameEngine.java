@@ -12,6 +12,7 @@ import it.unicam.cs.mpgc.rpg126523.model.student.Student;
 import it.unicam.cs.mpgc.rpg126523.model.task.Task;
 import it.unicam.cs.mpgc.rpg126523.model.task.TaskDefault;
 import it.unicam.cs.mpgc.rpg126523.model.task.TaskUniversity;
+import it.unicam.cs.mpgc.rpg126523.persistence.dom.TaskXmlReader;
 import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class GameEngine {
     private List<Task> daily_tasks;
     private Set<Course> courseSelected;
     private Course nextExamCourse;
-
+    private TaskXmlReader taskXmlReader;
 
 
     public GameEngine(Game game) {
@@ -34,7 +35,10 @@ public class GameEngine {
 
     public GameEngine(){
         selectCoursesToFollow();
+        taskXmlReader= new TaskXmlReader("/xml/tasks.xml");
+
         nextExamCourse = this.courseSelected.stream().filter(c->c.getId()==101).findFirst().get();
+
     }
 
     public void selectCoursesToFollow(){
@@ -78,51 +82,8 @@ public class GameEngine {
         return totaleDurata <=24;
     }
 
-
-
-    //TODO: DA LEVARE
     public List<Task> getAvailableTasks() {
-        return List.of(
-                new TaskDefault(
-                        "Decidi ci voler andare a dormire",
-                        "Dormire",
-                        8,
-                        10,
-                        0
-                ),
-                new TaskUniversity(
-                        "Lezione",
-                        "Andare a lezione",
-                        2,
-                        -2,
-                        0,
-                        101,
-                        5
-                ),
-                new TaskUniversity(
-                        "Studio in biblioteca",
-                        "Ripassare gli appunti in biblioteca",
-                        3,
-                        -3,
-                        0,
-                        101,
-                        4
-                ),
-                new TaskDefault(
-                        "Uscire con gli amici a giocare a calcetto",
-                        "Partita a calcetto",
-                        2,
-                        -3,
-                        -3
-                ),
-                new TaskDefault(
-                        "Mangiare qualcosa",
-                        "Mangiare",
-                        1,
-                        5,
-                        0
-                )
-        );
+        return taskXmlReader.loadTasks();
     }
 
     public void loadDailyTask(List<Task> items) {

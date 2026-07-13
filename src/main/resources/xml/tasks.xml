@@ -24,6 +24,7 @@
         <duration>
             2
         </duration>
+        <idCourse>101</idCourse>
         <consequences>
             <energy type="decrease">2</energy>
             <knowledge type="increase">5</knowledge>
@@ -39,13 +40,14 @@
         <duration>
             3
         </duration>
+        <idCourse>101</idCourse>
         <consequences>
             <energy type="decrease">3</energy>
             <knowledge type="increase">4</knowledge>
         </consequences>
     </task>
     <task type="default">
-        <name >
+        <name>
             Partita a calcetto
         </name>
         <description>

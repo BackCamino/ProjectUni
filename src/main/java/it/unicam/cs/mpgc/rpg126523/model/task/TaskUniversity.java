@@ -27,7 +27,6 @@ public class TaskUniversity implements Task {
     }
 
 
-
     @Override
     public int getDuration() {
         return duration;

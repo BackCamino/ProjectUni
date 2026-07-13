@@ -31,6 +31,5 @@ public interface Student extends ConsequencesApplier {
 
     public int getKnowledgePoints(int idCourse);
 
-
     public Career getCareer();
 }

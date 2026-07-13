@@ -21,6 +21,7 @@ public class TaskXmlReader {
     Document document;
     public TaskXmlReader(String filePath) {
         this.filePath = filePath;
+        initDocument();
     }
 
     public void initDocument() {
@@ -35,27 +36,41 @@ public class TaskXmlReader {
         }
     }
 
-    public List<Task> loadTasks(){
-        List<Task> tasks=new ArrayList<>();
+
+    public List<Task> loadTasks() {
+        List<Task> tasks = new ArrayList<>();
         NodeList taskNodes = document.getElementsByTagName("task");
-        for(int i=0; i<taskNodes.getLength();i++){
+        for (int i = 0; i < taskNodes.getLength(); i++) {
             tasks.add(readTask((Element) taskNodes.item(i)));
         }
         return tasks;
     }
 
-    private Task readTask(Element element){
+    private Task readTask(Element element) {
         String type = element.getAttribute("type");
-        String name = element.getElementsByTagName("name").item(0).getTextContent();
-        int duration = Integer.parseInt(element.getElementsByTagName("duration").item(0).getTextContent());
-        //TODO: da vedere se qui serve il delta in positibo o negativo 
-        int deltaStress  = Integer.parseInt(element.getElementsByTagName("deltaStress").item(0).getTextContent());
-        if(type.equalsIgnoreCase("university")){
-            return null ;//TaskUniversity();
+        String name = element.getElementsByTagName("name").item(0).getTextContent().trim();
+        String description = element.getElementsByTagName("description").item(0).getTextContent().trim();
+        int duration = Integer.parseInt(element.getElementsByTagName("duration").item(0).getTextContent().trim());
+
+        Element consequences = (Element) element.getElementsByTagName("consequences").item(0);
+        int deltaEnergy = readDelta(consequences, "energy");
+        int deltaStress = readDelta(consequences, "stress");
+
+        if ("university".equalsIgnoreCase(type)) {
+            int idCourse = Integer.parseInt(element.getElementsByTagName("idCourse").item(0).getTextContent().trim());
+            int deltaKnowledge = readDelta(consequences, "knowledge");
+            return new TaskUniversity(name, description, duration, deltaEnergy, deltaStress, idCourse, deltaKnowledge);
         }
-        return null;//TaskDefault();
+        return new TaskDefault(description, name, duration, deltaEnergy, deltaStress);
     }
 
+    private int readDelta(Element consequences, String tag) {
+        NodeList list = consequences.getElementsByTagName(tag);
+        if (list.getLength() == 0) return 0;
+        Element el = (Element) list.item(0);
+        int value = Integer.parseInt(el.getTextContent().trim());
+        return "decrease".equalsIgnoreCase(el.getAttribute("type")) ? -value : value;
+    }
 
 
 }
