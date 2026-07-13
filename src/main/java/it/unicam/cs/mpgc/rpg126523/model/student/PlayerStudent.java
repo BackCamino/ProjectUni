@@ -7,6 +7,7 @@ import it.unicam.cs.mpgc.rpg126523.model.resource.SimpleResource;
 import it.unicam.cs.mpgc.rpg126523.model.consequences.Consequences;
 import it.unicam.cs.mpgc.rpg126523.model.resource.Resource;
 import it.unicam.cs.mpgc.rpg126523.model.resource.ValueAdjustable;
+import it.unicam.cs.mpgc.rpg126523.model.statistics.StatisticType;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.Statistics;
 import it.unicam.cs.mpgc.rpg126523.model.statistics.StudentClass;
 import lombok.ToString;
@@ -114,12 +115,9 @@ public class PlayerStudent implements Student {
             applyStress(result.deltaStress());
         if(result.hasCourseReward()){
             this.knowledge.get(result.idCourse()).increment(result.knowledge());
-            System.out.println(this.knowledge.get(result.idCourse()).getValue());
         }
-
     }
 
-    //TODO: da inserire che anche le statistiche fanno variare il delta
     private void applyEnergy(int delta){
         if(isIncrementValue(delta))
             this.energy.increment(delta);
@@ -135,6 +133,7 @@ public class PlayerStudent implements Student {
             this.stress.decrement(Math.abs(delta));
     }
 
+
     private boolean isIncrementValue(int delta){
         return delta > 0;
     }
@@ -142,6 +141,5 @@ public class PlayerStudent implements Student {
     private boolean isDecrementValue(int delta){
         return delta < 0;
     }
-
 
 }
